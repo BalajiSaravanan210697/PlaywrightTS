@@ -1,20 +1,16 @@
 /* Write a JavaScript function named `isOddOrEven` that takes an integer as input and returns `Odd` if the 
 number is odd and `"Even"` if the number is even. */
 
-function isOddOrEven(number){ 
-    if(number <= 1) return false
-    if(number%2===0){
-        return true
-    }
-    return false
+function isOddOrEven(number) {
+  let result;
+  if (number <= 1) return false;
+  if (number % 2 === 0) {
+    result = "The Given number is Even Number";
+  } else {
+    result = "The Given number is Odd Number";
+  }
+  return result;
 }
 
-let inputNumber=78
-let result=isOddOrEven(inputNumber)
-if(result===true){
-    console.log("Given number is Even Number : "+inputNumber);    
-}
-else{
-    console.log("Given number is odd Number : "+inputNumber);
-    
-}
+let inputNumber = 78;
+console.log(isOddOrEven(inputNumber));
