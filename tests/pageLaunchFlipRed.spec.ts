@@ -18,7 +18,7 @@ test("page launch of redbus on Edge", async () => {
   console.log("Page URL is : " + pageURL);
 });
 
-test.only("Launching Flipkart page on WebKit", async () => {
+test("Launching Flipkart page on WebKit", async () => {
   let browser = await webkit.launch();
 
   let context = await browser.newContext();
