@@ -1,6 +1,6 @@
 import test from "@playwright/test";
 
-test.only("Create Lead in LT application using css Locators", async ({ page }) => {
+test("Create Lead in LT application using css Locators", async ({ page }) => {
   await page.goto("https://leaftaps.com/opentaps/control/main");
 
   await page.locator("#username").fill("democsr2");
