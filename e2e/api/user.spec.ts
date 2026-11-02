@@ -15,50 +15,40 @@ test.describe("Users API Automation", () => {
     expect(responseTime).toBeLessThan(3000);
 
     const users = await response.json();
-   
-    expect(users.length).toBe(10)
-    console.log(users.length)
 
-    //print all user names 
-    const userNames = users.map(
-        (user:any)=> user.name
-    )
+    expect(users.length).toBe(10);
+    console.log(users.length);
 
-    console.log(userNames)
+    //print all user names
+    const userNames = users.map((user: any) => user.name);
 
-    // print users email ends with .biz 
-    const emailUsers = users.filter(
-        (user:any) => user.email.toLowerCase().endsWith('.biz')
-    )
+    console.log(userNames);
 
-    console.log(emailUsers)
+    // print users email ends with .biz
+    const emailUsers = users.filter((user: any) =>
+      user.email.toLowerCase().endsWith(".biz"),
+    );
 
-    // print all user cities 
-    const userCities = users.map(
-        (user : any) => user.address.city
-    )
-    
-    console.log('user Cities are : '+userCities)
+    console.log(emailUsers);
 
-    const uniqueIDs = users.map(
-        (user : any) => user.id
-    )
-    const uniqueIDSet = new Set(uniqueIDs)
-    expect(uniqueIDSet.size).toBe(uniqueIDs.length)
-    console.log(uniqueIDSet)
-    console.log(uniqueIDs)
-    console.log(uniqueIDs.length-uniqueIDs.size)
+    // print all user cities
+    const userCities = users.map((user: any) => user.address.city);
 
-    //user filter based on id 
-    const userByID = users.find(
-        (user : any) => user.id === 2
-    )
-    console.log(userByID)
+    console.log("user Cities are : " + userCities);
 
-    //check all records should have username 
-    const userName = users.every(
-      (user : any) => user.username!== ''
-    )
-    expect(userName).toBeTruthy()
+    const uniqueIDs = users.map((user: any) => user.id);
+    const uniqueIDSet = new Set(uniqueIDs);
+    expect(uniqueIDSet.size).toBe(uniqueIDs.length);
+    console.log(uniqueIDSet);
+    console.log(uniqueIDs);
+    console.log(uniqueIDs.length - uniqueIDs.size);
+
+    //user filter based on id
+    const userByID = users.find((user: any) => user.id === 2);
+    console.log(userByID);
+
+    //check all records should have username
+    const userName = users.every((user: any) => user.username !== "");
+    expect(userName).toBeTruthy();
   });
 });
